@@ -12,7 +12,7 @@ export class Category {
   id: string;
 
   @Column()
-  title: string;
+  name: string;
 
   @Column({
     default: '',
@@ -21,6 +21,11 @@ export class Category {
 
   @Column()
   parentId: string;
+
+  @Column({
+    default: 0,
+  })
+  state: number;
 
   @Column()
   @DeleteDateColumn()

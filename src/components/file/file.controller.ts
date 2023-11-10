@@ -15,7 +15,7 @@ export class FileController {
   @Post('imgUpload')
   @UseInterceptors(FileInterceptor('img'))
   imgUpload(@UploadedFile() file: Express.Multer.File) {
-    const imgPath = `/${Date.now()}.${file.fieldname}`;
+    const imgPath = `/${Date.now()}.png`;
     const writeStream = createWriteStream(
       join(__dirname, '../../../static/img', imgPath),
     );
